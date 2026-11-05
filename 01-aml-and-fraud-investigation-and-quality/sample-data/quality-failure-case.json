@@ -1,0 +1,82 @@
+{
+  "case_id": "QA-SYN-003",
+  "case_type": "AML",
+  "title": "Incomplete investigation \u2014 independent quality challenge",
+  "institution": "Harbourline Bank (fictional)",
+  "customer": {
+    "name": "Customer C (fictional)",
+    "customer_since": "2020-07-15",
+    "occupation": "Small business owner",
+    "declared_annual_income_aud": 85000,
+    "account_purpose": "Business receipts and personal expenses"
+  },
+  "review_period": "2026-10-01 to 2026-10-05",
+  "case_summary": "The investigator records that incoming payments are customer business receipts but does not identify the payers, establish the purpose of each payment or provide supporting evidence.",
+  "customer_statement": "Customer says the payments relate to business sales. No invoices or sales records are included in the supplied case file.",
+  "transactions": [
+    {
+      "date": "2026-10-01",
+      "direction": "IN",
+      "amount_aud": 8900,
+      "counterparty": "Unknown payer 1",
+      "reference": "Transfer",
+      "source_id": "QA-TXN-01"
+    },
+    {
+      "date": "2026-10-02",
+      "direction": "IN",
+      "amount_aud": 7600,
+      "counterparty": "Unknown payer 2",
+      "reference": "Transfer",
+      "source_id": "QA-TXN-02"
+    },
+    {
+      "date": "2026-10-03",
+      "direction": "OUT",
+      "amount_aud": 15000,
+      "counterparty": "Unknown recipient",
+      "reference": "Transfer",
+      "source_id": "QA-TXN-03"
+    }
+  ],
+  "recorded_facts": [
+    {
+      "text": "Two incoming payments totalling AUD 16,500 and one outgoing payment of AUD 15,000 are listed.",
+      "source": "QA-TXN-01 to QA-TXN-03"
+    }
+  ],
+  "customer_statements": [
+    {
+      "text": "Customer says incoming payments are business sales.",
+      "source": "Synthetic case narrative",
+      "verification_status": "Not independently verified"
+    }
+  ],
+  "observations": [
+    "Investigation narrative accepts the customer's explanation without recording supporting evidence."
+  ],
+  "unknowns": [
+    "Payer identities and relationships.",
+    "Purpose of outgoing payment.",
+    "Supporting records for business sales.",
+    "Whether the payments are consistent with account history."
+  ],
+  "next_enquiries": [
+    "Identify the payers and recipient.",
+    "Obtain and assess proportionate sales support.",
+    "Explain the outgoing payment and update the case rationale."
+  ],
+  "provisional_position": "No further action required; payments are normal business receipts.",
+  "quality_checks": {
+    "customer_profile_considered": true,
+    "transactions_reviewed": false,
+    "counterparties_established": false,
+    "source_of_funds_assessed": false,
+    "purpose_of_payments_assessed": false,
+    "customer_explanation_tested": false,
+    "evidence_sources_recorded": false,
+    "conclusion_supported": false,
+    "gaps_and_next_steps_recorded": false
+  },
+  "quality_notes": "The recorded conclusion is stronger than the evidence supplied. The independent reviewer should challenge the unsupported outcome and require a revised assessment."
+}

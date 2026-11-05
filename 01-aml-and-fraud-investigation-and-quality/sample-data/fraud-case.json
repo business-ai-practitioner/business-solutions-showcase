@@ -1,0 +1,127 @@
+{
+  "case_id": "FRD-SYN-002",
+  "case_type": "FRAUD",
+  "title": "Customer reports an authorised payment impersonation scam",
+  "institution": "Harbourline Bank (fictional)",
+  "customer": {
+    "name": "Customer B (fictional)",
+    "customer_since": "2018-02-09",
+    "occupation": "Retired teacher",
+    "account_purpose": "Pension income and personal expenses"
+  },
+  "review_period": "2026-10-14",
+  "case_summary": "The customer reports receiving a call from someone claiming to be from the bank's fraud team. The caller said the account was at risk and instructed the customer to move money to a new account described as safe.",
+  "customer_statement": "The customer says they believed they were speaking to the bank and authorised the payments following the caller's instructions. This account has not been independently corroborated.",
+  "chronology": [
+    {
+      "time": "09:10",
+      "event": "Customer reports receiving a call from a person claiming to be from the bank.",
+      "source": "Customer account; call record not yet reviewed"
+    },
+    {
+      "time": "09:22",
+      "event": "Customer says caller warned that funds were at risk and instructed a transfer to a safe account.",
+      "source": "Customer account"
+    },
+    {
+      "time": "09:41",
+      "event": "First payment authenticated by the customer.",
+      "source": "Synthetic bank transaction record"
+    },
+    {
+      "time": "10:03",
+      "event": "Second payment authenticated by the customer.",
+      "source": "Synthetic bank transaction record"
+    },
+    {
+      "time": "10:27",
+      "event": "Third payment authenticated by the customer.",
+      "source": "Synthetic bank transaction record"
+    },
+    {
+      "time": "13:15",
+      "event": "Customer contacts the bank to report suspected scam.",
+      "source": "Synthetic service contact record"
+    }
+  ],
+  "transactions": [
+    {
+      "date": "2026-10-14",
+      "direction": "OUT",
+      "amount_aud": 7200,
+      "counterparty": "New beneficiary account 1",
+      "reference": "Osko transfer",
+      "source_id": "FR-TXN-01"
+    },
+    {
+      "date": "2026-10-14",
+      "direction": "OUT",
+      "amount_aud": 6800,
+      "counterparty": "New beneficiary account 1",
+      "reference": "Osko transfer",
+      "source_id": "FR-TXN-02"
+    },
+    {
+      "date": "2026-10-14",
+      "direction": "OUT",
+      "amount_aud": 5000,
+      "counterparty": "New beneficiary account 2",
+      "reference": "Osko transfer",
+      "source_id": "FR-TXN-03"
+    }
+  ],
+  "recorded_facts": [
+    {
+      "text": "Three outgoing payments totalling AUD 19,000 are listed in the supplied transaction data.",
+      "source": "FR-TXN-01 to FR-TXN-03"
+    },
+    {
+      "text": "The supplied service record shows the customer contacted the bank at 13:15.",
+      "source": "Synthetic service contact record"
+    }
+  ],
+  "customer_statements": [
+    {
+      "text": "The customer says the caller claimed to represent the bank and instructed transfers to a safe account.",
+      "source": "Customer account",
+      "verification_status": "Not independently verified"
+    },
+    {
+      "text": "The customer says they personally authorised the payments because they believed the caller.",
+      "source": "Customer account",
+      "verification_status": "Authentication records supplied; circumstances require review"
+    }
+  ],
+  "observations": [
+    "The customer-reported call and instruction precede the three payments in the supplied chronology.",
+    "The payments were made to two newly described beneficiary accounts.",
+    "The supplied material does not establish who controlled the beneficiary accounts or what happened to the funds afterwards."
+  ],
+  "unknowns": [
+    "Origin and identity of the caller.",
+    "Whether the call can be linked to any known impersonation activity.",
+    "Beneficiary account ownership and any onward movement of funds.",
+    "Whether any funds were held, recalled or recovered.",
+    "Whether device, authentication or contact records provide additional relevant evidence."
+  ],
+  "next_enquiries": [
+    "Preserve and review available call, digital channel and authentication records under bank procedures.",
+    "Establish beneficiary account details and examine available onward movement information.",
+    "Record the timing and outcome of relevant recall, hold or recovery enquiries.",
+    "Assess the customer's account of events alongside available independent records."
+  ],
+  "provisional_position": "Suspected impersonation scam reported by the customer. Further enquiries are required to establish the caller, beneficiary links and fund movement. The bank's authorised fraud process determines the outcome.",
+  "quality_checks": {
+    "incident_narrative_recorded": true,
+    "chronology_recorded": true,
+    "deception_examined": false,
+    "authorisation_distinguished_from_deception": true,
+    "payment_details_recorded": true,
+    "fund_movement_examined": false,
+    "customer_impact_confirmed": false,
+    "response_and_recovery_recorded": false,
+    "evidence_sources_recorded": true,
+    "outcome_supported": true
+  },
+  "quality_notes": "The chronology and payments are supplied, but the caller, beneficiary control, onward movement and recovery outcomes remain unresolved."
+}

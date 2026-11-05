@@ -1,0 +1,19 @@
+{
+  "project_title": "Intelligent AML & Fraud Investigation and Quality Assurance",
+  "status": "demonstration prototype",
+  "data_classification": "synthetic fictional data only",
+  "ai_status": "not an AI model; transparent predefined rules",
+  "runtime": "Python 3.9+ standard library",
+  "entry_point": "prototype/app.py",
+  "cases": [
+    "sample-data/aml-case.json",
+    "sample-data/fraud-case.json",
+    "sample-data/quality-failure-case.json"
+  ],
+  "important_boundaries": [
+    "No bank system integration",
+    "No document extraction",
+    "No customer or regulatory decisions",
+    "No validated performance claims"
+  ]
+}

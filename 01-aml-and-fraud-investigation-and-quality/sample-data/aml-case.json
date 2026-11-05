@@ -1,0 +1,134 @@
+{
+  "case_id": "AML-SYN-001",
+  "case_type": "AML",
+  "title": "Multiple incoming payments and onward transfers",
+  "institution": "Harbourline Bank (fictional)",
+  "customer": {
+    "name": "Customer A (fictional)",
+    "customer_since": "2021-04-12",
+    "occupation": "Operations manager",
+    "declared_annual_income_aud": 110000,
+    "account_purpose": "Salary, household expenses and personal savings"
+  },
+  "review_period": "2026-09-03 to 2026-09-08",
+  "case_summary": "A monitoring referral identifies multiple incoming payments from individuals followed by transfers to external accounts. The activity requires assessment against the customer profile and the stated explanation.",
+  "customer_statement": "The customer says the incoming payments are repayments of personal loans made to friends. The statement has not been independently verified.",
+  "transactions": [
+    {
+      "date": "2026-09-03",
+      "direction": "IN",
+      "amount_aud": 4800,
+      "counterparty": "Payer 1",
+      "reference": "Transfer",
+      "source_id": "TXN-A01"
+    },
+    {
+      "date": "2026-09-03",
+      "direction": "IN",
+      "amount_aud": 5200,
+      "counterparty": "Payer 2",
+      "reference": "Transfer",
+      "source_id": "TXN-A02"
+    },
+    {
+      "date": "2026-09-04",
+      "direction": "IN",
+      "amount_aud": 4600,
+      "counterparty": "Payer 3",
+      "reference": "Repayment",
+      "source_id": "TXN-A03"
+    },
+    {
+      "date": "2026-09-05",
+      "direction": "OUT",
+      "amount_aud": 6000,
+      "counterparty": "Recipient 1",
+      "reference": "Online transfer",
+      "source_id": "TXN-A04"
+    },
+    {
+      "date": "2026-09-06",
+      "direction": "IN",
+      "amount_aud": 5100,
+      "counterparty": "Payer 1",
+      "reference": "Transfer",
+      "source_id": "TXN-A05"
+    },
+    {
+      "date": "2026-09-06",
+      "direction": "OUT",
+      "amount_aud": 5500,
+      "counterparty": "Recipient 2",
+      "reference": "Online transfer",
+      "source_id": "TXN-A06"
+    },
+    {
+      "date": "2026-09-07",
+      "direction": "OUT",
+      "amount_aud": 4000,
+      "counterparty": "Recipient 3",
+      "reference": "Online transfer",
+      "source_id": "TXN-A07"
+    },
+    {
+      "date": "2026-09-08",
+      "direction": "OUT",
+      "amount_aud": 1200,
+      "counterparty": "Retail merchant",
+      "reference": "Card purchase",
+      "source_id": "TXN-A08"
+    }
+  ],
+  "recorded_facts": [
+    {
+      "text": "Four incoming payments totalling AUD 19,700 are listed in the supplied transaction sample.",
+      "source": "TXN-A01 to TXN-A03 and TXN-A05"
+    },
+    {
+      "text": "Four outgoing payments totalling AUD 16,700 are listed in the supplied transaction sample.",
+      "source": "TXN-A04 and TXN-A06 to TXN-A08"
+    },
+    {
+      "text": "The customer profile records declared annual income of AUD 110,000.",
+      "source": "Customer profile supplied for this synthetic case"
+    }
+  ],
+  "customer_statements": [
+    {
+      "text": "Incoming payments are repayments of personal loans to friends.",
+      "source": "Synthetic case narrative",
+      "verification_status": "Not independently verified"
+    }
+  ],
+  "observations": [
+    "Incoming payments are received from three named payer labels, with Payer 1 paying twice.",
+    "Outgoing payments are made to three recipient labels and one retail merchant.",
+    "The supplied information does not show whether the incoming and outgoing payments are connected."
+  ],
+  "unknowns": [
+    "Identity and relationship of each payer and recipient.",
+    "Evidence supporting the stated personal-loan arrangements.",
+    "Source of funds held by each payer before the incoming payments.",
+    "Purpose of each outgoing transfer and whether any recipient is connected to the customer.",
+    "Whether the activity is consistent with the customer's wider account activity; only a limited sample is supplied."
+  ],
+  "next_enquiries": [
+    "Establish and record the relationship between the customer and each payer and recipient.",
+    "Assess proportionate supporting information for the claimed personal loans.",
+    "Clarify the purpose and context of each material outgoing transfer.",
+    "Review a suitable wider account period before drawing conclusions."
+  ],
+  "provisional_position": "Further enquiries required. The supplied information does not establish the source and purpose of the relevant funds.",
+  "quality_checks": {
+    "customer_profile_considered": true,
+    "transactions_reviewed": true,
+    "counterparties_established": false,
+    "source_of_funds_assessed": false,
+    "purpose_of_payments_assessed": false,
+    "customer_explanation_tested": false,
+    "evidence_sources_recorded": true,
+    "conclusion_supported": true,
+    "gaps_and_next_steps_recorded": true
+  },
+  "quality_notes": "The case data deliberately leaves key counterparty and source/purpose questions unresolved. A reviewer should check that the provisional position remains appropriately cautious."
+}

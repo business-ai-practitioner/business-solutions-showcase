@@ -1,0 +1,89 @@
+{
+  "case_id": "AML-HB-001",
+  "institution": "Harbourline Bank (fictional)",
+  "pathway": "AML",
+  "status": "Synthetic demonstration case",
+  "customer": {
+    "customer_id": "CUSTOMER-A",
+    "declared_annual_salary_aud": 110000,
+    "occupation": "Not supplied",
+    "expected_account_activity": "Not supplied"
+  },
+  "review_period": {
+    "start": "2026-09-03",
+    "end": "2026-09-07"
+  },
+  "transactions": [
+    {
+      "id": "T001",
+      "date": "2026-09-03",
+      "direction": "incoming",
+      "amount_aud": 4800,
+      "counterparty": "CP-01",
+      "purpose": "Unknown"
+    },
+    {
+      "id": "T002",
+      "date": "2026-09-03",
+      "direction": "incoming",
+      "amount_aud": 5200,
+      "counterparty": "CP-02",
+      "purpose": "Unknown"
+    },
+    {
+      "id": "T003",
+      "date": "2026-09-04",
+      "direction": "incoming",
+      "amount_aud": 4600,
+      "counterparty": "CP-03",
+      "purpose": "Unknown"
+    },
+    {
+      "id": "T004",
+      "date": "2026-09-05",
+      "direction": "outgoing",
+      "amount_aud": 6000,
+      "counterparty": "CP-04",
+      "purpose": "Unknown"
+    },
+    {
+      "id": "T005",
+      "date": "2026-09-06",
+      "direction": "incoming",
+      "amount_aud": 5100,
+      "counterparty": "CP-05",
+      "purpose": "Unknown"
+    },
+    {
+      "id": "T006",
+      "date": "2026-09-06",
+      "direction": "outgoing",
+      "amount_aud": 5500,
+      "counterparty": "CP-06",
+      "purpose": "Unknown"
+    },
+    {
+      "id": "T007",
+      "date": "2026-09-07",
+      "direction": "outgoing",
+      "amount_aud": 4000,
+      "counterparty": "CP-07",
+      "purpose": "Unknown"
+    }
+  ],
+  "customer_explanation": null,
+  "evidence_available": [
+    "Synthetic transaction listing",
+    "Declared annual salary figure"
+  ],
+  "evidence_missing_or_unverified": [
+    "Counterparty identities and relationships",
+    "Purpose of incoming payments",
+    "Verified source of funds",
+    "Purpose and beneficiaries of outgoing transfers",
+    "Customer explanation and independent corroboration"
+  ],
+  "investigator_notes": "Multiple incoming payments from unrelated parties are followed by outgoing transfers. The supplied information does not establish the purpose or legitimacy of the activity.",
+  "expected_provisional_position": "Further enquiries required \u2014 insufficient evidence to reach a definitive conclusion.",
+  "synthetic_data_notice": "All entities, identifiers and transactions are fictional and created solely for demonstration."
+}

@@ -1,0 +1,21 @@
+{
+  "project_name": "Intelligent AML & Fraud Investigation and Quality Assurance",
+  "folder": "01-aml-and-fraud-investigation-and-quality",
+  "status": "Working rules-based demonstration prototype; not an AI/LLM application",
+  "data": "Synthetic only",
+  "files": [
+    "README.md",
+    "demonstration-walkthrough.md",
+    "evidence-assessment-guide.md",
+    "images/workflow.mmd",
+    "independent-quality-checklist.md",
+    "limitations-and-controls.md",
+    "management-intelligence.md",
+    "prototype/README.md",
+    "prototype/app.py",
+    "sample-data/aml-case.json",
+    "sample-data/fraud-case.json",
+    "sample-data/quality-failure-case.json",
+    "solution-design.md"
+  ]
+}

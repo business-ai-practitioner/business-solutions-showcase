@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Performance Appraisal Intelligence | Interactive Showcase</title>
+<style>
+:root{--ink:#172334;--muted:#64748b;--line:#dce3eb;--paper:#f4f7fb;--navy:#10243a;--blue:#2359a8;--teal:#087e83;--amber:#a65c12;--red:#a33838;--green:#23734b}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Arial}
+header{background:linear-gradient(120deg,#10243a,#1b4162);color:white;padding:34px max(22px,calc((100% - 1120px)/2)) 30px}
+.kicker{text-transform:uppercase;letter-spacing:.15em;font-size:11px;color:#a9c9e8;font-weight:700}
+h1{font-size:clamp(30px,5vw,48px);line-height:1.04;margin:10px 0 12px;max-width:780px;letter-spacing:-.04em}
+header p{max-width:730px;color:#d7e4ef;margin:0;font-size:17px}
+.headerline{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.pill{border:1px solid #6f8da8;border-radius:30px;padding:5px 10px;font-size:12px;color:#e2edf6}
+main{max-width:1120px;margin:28px auto;padding:0 20px 50px}
+.notice{background:#fff8e9;border:1px solid #f1d7a9;border-radius:12px;padding:13px 16px;color:#754716;font-size:13px;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:1.05fr .95fr;gap:20px}.panel{background:white;border:1px solid var(--line);border-radius:15px;padding:21px;box-shadow:0 5px 18px rgba(19,42,67,.04)}
+.panel h2{font-size:18px;margin:0 0 4px}.sub{color:var(--muted);font-size:13px;margin:0 0 18px}
+label{display:block;font-size:12px;font-weight:700;color:#43546a;margin:12px 0 5px}
+input,textarea,select{width:100%;border:1px solid #cfd8e3;border-radius:8px;padding:10px 11px;font:inherit;color:var(--ink);background:#fff}
+textarea{min-height:96px;resize:vertical}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+details{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:14px 0;background:#fbfcfe}
+summary{cursor:pointer;font-weight:700;color:#24415e}
+button{border:0;border-radius:9px;padding:11px 16px;font-weight:700;cursor:pointer;font:inherit}
+.primary{background:var(--blue);color:white}.secondary{background:#edf2f8;color:#24415e}
+.actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:17px}
+.metric{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:15px 0}
+.metric div{background:#f3f6fa;border-radius:9px;padding:11px}.metric b{display:block;font-size:20px}.metric span{font-size:11px;color:var(--muted)}
+.result{display:none}.result.show{display:block}
+.flag{border-left:3px solid var(--amber);background:#fff8ee;padding:10px 12px;border-radius:0 8px 8px 0;margin:9px 0;font-size:13px}
+.good{border-left-color:var(--green);background:#eff8f2}.bad{border-left-color:var(--red);background:#fff2f1}
+.tag{display:inline-block;font-size:11px;font-weight:700;border-radius:20px;padding:3px 8px;background:#eef2f7;color:#40546b;margin:2px}
+.draft{white-space:pre-wrap;background:#f7f9fc;border:1px solid var(--line);border-radius:10px;padding:14px;font-size:13px;min-height:150px}
+footer{max-width:1120px;margin:auto;padding:0 20px 35px;color:var(--muted);font-size:12px}
+@media(max-width:820px){.grid{grid-template-columns:1fr}.two{grid-template-columns:1fr}.metric{grid-template-columns:1fr 1fr}}
+</style></head>
+<body>
+<header>
+<div class="kicker">Business AI Practitioner · Project 08</div>
+<h1>Performance Appraisal Intelligence</h1>
+<p>Evidence before eloquence. Connect individual contribution to team priorities, challenge unsupported claims, and create a clearer appraisal draft.</p>
+<div class="headerline"><span class="pill">Interactive concept demonstrator</span><span class="pill">Synthetic data only</span><span class="pill">Human approval required</span></div>
+</header>
+<main>
+<div class="notice"><b>Demonstration notice:</b> This is an illustrative front-end walkthrough, not a live AI assessment engine. It does not verify facts, determine ratings, store employee data or connect to HR systems. Do not enter real employee information.</div>
+<div class="grid">
+<section class="panel">
+<h2>1 · Employee assessment</h2><p class="sub">Enter a fictional employee profile and the manager's proposed assessment.</p>
+<label>Employee name</label><input id="name" value="Alex Morgan">
+<div class="two"><div><label>Role</label><input id="role" value="Operations Transformation Manager"></div><div><label>Team</label><input id="team" value="Payments Transformation"></div></div>
+<div class="two"><div><label>Proposed What rating</label><select id="what"><option value="1">1</option><option value="2">2</option><option value="3" selected>3</option></select></div><div><label>Proposed How rating</label><select id="how"><option value="1">1</option><option value="2">2</option><option value="3" selected>3</option></select></div></div>
+<label>Individual objectives</label><textarea id="objectives">Deliver the payment exception workflow redesign to approved design and pilot readiness.
+Improve team capability through coaching and knowledge transfer.</textarea>
+<label>Manager evidence and observations</label><textarea id="notes">Led the payment exception workflow redesign and completed the design milestone three weeks ahead of the internal target.
+Manager reports an estimated AUD 180,000 annualised benefit; Finance validation has not been supplied.
+Coached two analysts and ran three knowledge-sharing sessions.
+Worked closely with Operations, Technology and Risk stakeholders.</textarea>
+<details open>
+<summary>Optional · Team and leadership context</summary>
+<p class="sub">Add context to connect individual work with wider expectations. Leave blank if unavailable.</p>
+<label>Team Head annual objectives</label><textarea id="headObjectives">Improve payment operations resilience and control effectiveness.
+Deliver priority workflow simplification initiatives.
+Build sustainable team capability.</textarea>
+<label>Team objectives and expected outcomes</label><textarea id="teamObjectives">Reduce avoidable payment exception handling.
+Improve control evidence and operational hand-offs.
+Develop cross-functional capability.</textarea>
+<label>Team projects and employee's expected contribution</label><textarea id="projects">Payment exception workflow redesign — employee is the process design lead; expected outcome is approved design and pilot readiness.</textarea>
+<label>Team structure / roles (optional)</label><textarea id="structure">Team Head → Operations Transformation Manager → Operations Analysts</textarea>
+</details>
+<div class="actions"><button class="primary" onclick="assess()">Review evidence & preview</button><button class="secondary" onclick="resetDemo()">Reset example</button></div>
+</section>
+<section class="panel">
+<h2>2 · Evidence and alignment review</h2><p class="sub">Illustrative review panel — not a validated assessment.</p>
+<div id="empty">
+<div class="metric"><div><b>01</b><span>Expectations</span></div><div><b>02</b><span>Evidence</span></div><div><b>03</b><span>Human review</span></div></div>
+<p>Run the demonstration to see how the concept separates manager claims, evidence gaps and context alignment.</p>
+<div class="flag">A proposed rating is an input to review, not a rating automatically accepted or changed by the tool.</div>
+</div>
+<div id="result" class="result">
+<div class="metric"><div><b id="evidenceCount">—</b><span>Evidence signals</span></div><div><b id="gapCount">—</b><span>Clarifications</span></div><div><b id="contextCount">—</b><span>Context links</span></div></div>
+<h3>Evidence observations</h3><div id="flags"></div>
+<h3>Context alignment</h3><div id="alignment"></div>
+<h3>Manager review questions</h3><div id="questions"></div>
+<h3>Illustrative appraisal draft</h3><div class="draft" id="draft"></div>
+<p><span class="tag">Draft only</span><span class="tag">Not a rating recommendation</span><span class="tag">Manager approval required</span></p>
+<button class="secondary" onclick="copyDraft()">Copy draft</button><span id="copied" class="sub"></span>
+</div>
+</section>
+</div>
+</main>
+<footer>Performance Appraisal Intelligence · Independent portfolio concept · All example information is fictional. Project by Ketul Shah · <a href="https://www.linkedin.com/in/ketulhshah/">LinkedIn</a></footer>
+<script>
+const $=id=>document.getElementById(id);
+function assess(){
+ const name=$('name').value.trim()||'Employee';
+ const role=$('role').value.trim()||'Role not supplied';
+ const team=$('team').value.trim()||'Team not supplied';
+ const objectives=$('objectives').value.trim();
+ const notes=$('notes').value.trim();
+ const head=$('headObjectives').value.trim(), teamObj=$('teamObjectives').value.trim(), projects=$('projects').value.trim();
+ const context=[head,teamObj,projects].filter(Boolean).length;
+ const lines=notes.split(/[\\n.]+/).map(x=>x.trim()).filter(Boolean);
+ const metricLines=lines.filter(x=>/\\$|\\b\\d+\\b|percent|%|weeks?|months?|sessions|milestone/i.test(x));
+ const broadLines=lines.filter(x=>/great|excellent|strong|good team player|always|consistently|exceptional/i.test(x));
+ const flags=[];
+ if(metricLines.length) flags.push(['good',`Specific or measurable detail supplied: ${metricLines.length} statement(s). Any reported financial or operational result still requires source verification.`]);
+ if(/\\$|saving|benefit|reduction|increase|improv/i.test(notes)) flags.push(['warn','A benefit or outcome is reported. Confirm the baseline, calculation, attribution, period and independent validation before describing it as realised or verified.']);
+ if(broadLines.length) flags.push(['warn',`Broad evaluative language detected (${broadLines.length} statement(s)). Ask for observable examples rather than relying on labels such as “excellent” or “always”.`]);
+ if(!objectives) flags.push(['bad','No individual objectives supplied. The appraisal cannot be meaningfully assessed against agreed expectations.']);
+ if(!notes) flags.push(['bad','No manager evidence supplied. Do not generate substantive performance claims.']);
+ if(context) flags.push(['good','Optional organisational context supplied. Check that the employee’s own responsibility and contribution are evidenced before attributing team outcomes.']);
+ else flags.push(['warn','No team or leadership context supplied. The tool can still operate in standalone mode, but cannot assess alignment to wider priorities.']);
+ flags.push(['warn','The proposed What rating ('+$('what').value+') and How rating ('+$('how').value+') have not been validated against an organisation-specific rating framework.']);
+ $('evidenceCount').textContent=metricLines.length;
+ $('gapCount').textContent=flags.filter(f=>f[0]!=='good').length;
+ $('contextCount').textContent=context;
+ $('flags').innerHTML=flags.map(f=>`<div class="flag ${f[0]}">${escapeHtml(f[1])}</div>`).join('');
+ const links=[];
+ if(head) links.push('Compare the employee’s objectives and evidence with the Team Head priorities supplied; confirm the connection rather than assuming it.');
+ if(teamObj) links.push('Check which team outcomes the employee was directly accountable for and what contribution can be attributed to them.');
+ if(projects) links.push('Confirm the employee’s project role, deliverables, dependencies and completion evidence.');
+ if(!context) links.push('No wider context supplied. Alignment assessment is unavailable in this example.');
+ $('alignment').innerHTML=links.map(x=>`<div class="flag">${escapeHtml(x)}</div>`).join('');
+ const qs=[];
+ if(/\\$|saving|benefit/i.test(notes)) qs.push('Can the reported benefit be supported by an approved calculation or Finance validation?');
+ if(/weeks?|early|ahead/i.test(notes)) qs.push('What was the agreed milestone date, and what evidence confirms completion and acceptance?');
+ if(/coach|mentor|knowledge/i.test(notes)) qs.push('What changed as a result of the coaching or knowledge-sharing activity?');
+ qs.push('Are there material objectives, setbacks, dependencies or conduct matters not reflected in the notes?');
+ qs.push('What specific examples support the proposed behavioural rating?');
+ $('questions').innerHTML=qs.map(x=>`<div class="flag">${escapeHtml(x)}</div>`).join('');
+ const draft=`${name} — ${role} (${team})\\nProposed ratings: What ${$('what').value} / How ${$('how').value} — manager-proposed and not validated.\\n\\nDELIVERY AND OBJECTIVES\\nThe manager reports the following contributions: ${lines.slice(0,2).join('; ')||'No evidence supplied.'} These statements should be checked against the agreed objectives and supporting records.\\n\\nTEAM AND STRATEGIC CONTRIBUTION\\n${context?'The supplied team context provides a basis for reviewing alignment. The employee’s individual contribution, accountability and any shared dependencies require manager confirmation.':'No team or leadership context was supplied; wider alignment has not been assessed.'}\\n\\nBEHAVIOURS AND COLLABORATION\\n${lines.slice(2).join('; ')||'Further specific behavioural examples are required.'} Observable examples should support any behavioural assessment.\\n\\nAREAS REQUIRING CLARIFICATION\\n${qs.map(q=>'• '+q).join('\\n')}\\n\\nMANAGER REVIEW\\nThis is an illustrative draft based solely on manager-supplied notes. Verify all claims, resolve evidence gaps, apply the organisation’s approved criteria and obtain manager approval before use. No rating or employment decision is made by this demonstrator.`;
+ $('draft').textContent=draft;
+ $('empty').style.display='none';$('result').classList.add('show');$('copied').textContent='';
+}
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function copyDraft(){navigator.clipboard?.writeText($('draft').textContent).then(()=>$('copied').textContent='Copied').catch(()=>$('copied').textContent='Copy unavailable in this browser context.');}
+function resetDemo(){location.reload();}
+</script></body></html>

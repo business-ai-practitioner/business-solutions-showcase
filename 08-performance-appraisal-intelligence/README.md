@@ -12,7 +12,7 @@ Performance appraisals combine several questions: what was expected, what was de
 
 ## Try the demonstration
 
-Open [`index.html`](index.html) in a modern browser, or use the hosted demonstration when GitHub Pages is enabled. No installation, account or API key is required.
+Open the [live demonstration](https://business-ai-practitioner.github.io/business-solutions-showcase/08-performance-appraisal-intelligence/) in any modern browser. No installation, account or API key is required.
 
 The demonstrator lets you:
 1. Enter fictional employee objectives and manager observations.

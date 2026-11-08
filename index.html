@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Profile Health Check | Capability demonstration</title>
+<style>
+:root{--paper:#f6efdc;--ink:#23201b;--grey:#5b5548;--red:#a8232a;--blue:#1b3a9c;--hl:#ffe45c;--line:#cfc3a4}
+*{box-sizing:border-box}
+html{font-size:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.55;
+background-image:repeating-linear-gradient(transparent 0,transparent 31px,rgba(120,150,190,.22) 31px,rgba(120,150,190,.22) 32px)}
+.banner{position:sticky;top:0;z-index:10;background:var(--hl);color:#1b1800;border-bottom:3px solid #1b1800;padding:10px 16px;font:600 .95rem/1.4 "Courier New",Courier,monospace}
+main{max-width:920px;margin:0 auto;padding:28px 18px 60px}
+h1,h2,h3{font-family:"Courier New",Courier,monospace;font-weight:700;letter-spacing:.5px;margin:0}
+h1{font-size:2rem;line-height:1.15;text-transform:uppercase}
+h2{font-size:1.25rem;text-transform:uppercase;margin:44px 0 10px;border-bottom:3px solid var(--ink);padding-bottom:6px}
+h3{font-size:1rem;text-transform:uppercase;color:var(--grey);margin:18px 0 4px}
+.kicker{font:1rem "Courier New",Courier,monospace;color:var(--grey);margin:6px 0 22px}
+.lede{font-size:1.2rem;max-width:42rem}
+.pen{color:var(--red);border-bottom:3px solid var(--red)}
+p{margin:0 0 12px}
+.row{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}
+button{font:700 1rem "Courier New",Courier,monospace;color:var(--ink);background:#fffaf0;border:3px solid var(--ink);padding:10px 14px;cursor:pointer;border-radius:0}
+button:hover{background:#fff3c4}
+button[aria-pressed="true"]{background:var(--ink);color:#fffaf0}
+button:focus-visible,textarea:focus-visible,a:focus-visible{outline:4px solid var(--blue);outline-offset:2px}
+.cols{display:grid;grid-template-columns:1fr;gap:18px}
+@media (min-width:880px){.cols{grid-template-columns:1fr 1fr}}
+.sheet{background:#fffaf0;border:3px solid var(--ink);padding:16px 18px;box-shadow:5px 5px 0 rgba(35,32,27,.25)}
+.sheet h3:first-child{margin-top:0}
+.typed{font-family:"Courier New",Courier,monospace;font-size:.98rem;white-space:pre-wrap;margin:0}
+.tag{display:inline-block;font:700 .8rem "Courier New",Courier,monospace;border:2px solid var(--red);color:var(--red);padding:2px 8px;margin-bottom:10px;text-transform:uppercase}
+.bl{border:3px solid var(--ink);padding:10px 12px;font:700 1.05rem "Courier New",Courier,monospace;margin:4px 0 8px}
+table{border-collapse:collapse;width:100%;font:1rem "Courier New",Courier,monospace;margin:4px 0}
+td,th{border-bottom:2px dotted var(--line);padding:6px 4px;text-align:left}
+.warn{border:3px solid var(--red);background:#fff1ec;color:#5e0f14;padding:10px 12px;font:700 1rem "Courier New",Courier,monospace;margin:10px 0}
+label{display:block;font:700 1rem "Courier New",Courier,monospace;margin:8px 0 4px}
+textarea{width:100%;min-height:180px;font:1rem "Courier New",Courier,monospace;padding:10px;border:3px solid var(--ink);background:#fffdf7;color:var(--ink);resize:vertical}
+.result{margin-top:14px}
+.result ul{margin:6px 0 0;padding-left:0;list-style:none;font-family:"Courier New",Courier,monospace}
+.result li{padding:6px 0 6px 14px;border-left:5px solid var(--red);margin-bottom:6px;background:rgba(255,255,255,.55)}
+.small{font-size:.95rem;color:var(--grey)}
+ul.limits{padding-left:20px}
+ul.limits li{margin-bottom:6px}
+.end{margin-top:40px;border-top:3px solid var(--ink);padding-top:16px}
+a{color:var(--blue);font-weight:700}
+.sr{position:absolute;left:-9999px}
+</style>
+</head>
+<body>
+<div class="banner" role="note">Illustrative demo. Level 2: simple working checks. Fixed rules run in your browser on fictional samples or made-up text. Not AI and not a production system. Nothing you type leaves your device.</div>
+<main>
+<h1>Profile Health Check</h1>
+<p class="kicker">Capability demonstration</p>
+<p class="lede">A LinkedIn profile is a sales page that <span class="pen">nobody tests</span>. This page shows how a scored profile review behaves, using fictional profiles only.</p>
+
+<h2>1. Prepared samples</h2>
+<p>Choose a fictional profile. The report beside it was prepared in advance to show the layout and the type of outcome. It was not produced by a live tool.</p>
+<div class="row" role="group" aria-label="Choose a sample">
+<button type="button" data-s="a" aria-pressed="true">Sample A: claims backed by evidence</button>
+<button type="button" data-s="b" aria-pressed="false">Sample B: adjectives, no proof</button>
+<button type="button" data-s="c" aria-pressed="false">Sample C: too thin to score</button>
+</div>
+<div class="cols" aria-live="polite">
+<div class="sheet">
+<h3>Profile text (fictional)</h3>
+<pre class="typed" id="s-text"></pre>
+<div class="row"><button type="button" id="load">Copy this text into the check box below</button></div>
+</div>
+<div class="sheet">
+<span class="tag">Prepared in advance | Illustrative sample</span>
+<h3>Subject</h3>
+<p id="s-subject"></p>
+<h3>Bottom line</h3>
+<div class="bl" id="s-bottom"></div>
+<h3>Why</h3>
+<p id="s-why"></p>
+<h3>Ratings</h3>
+<table><tbody id="s-rate"></tbody></table>
+<h3>Next step</h3>
+<p id="s-next"></p>
+</div>
+</div>
+
+<h2>2. Try text checks</h2>
+<p>These checks look at the words you give them. They count and flag. They do not rate a person or give advice.</p>
+<div class="warn">Do not paste real personal or customer data. Use made-up text.</div>
+<label for="box">Made-up profile text</label>
+<textarea id="box" maxlength="3000" spellcheck="false" placeholder="Type or paste made-up text here."></textarea>
+<div class="row">
+<button type="button" id="run">Run text checks</button>
+<button type="button" id="clear">Clear</button>
+</div>
+<div class="result" id="out" aria-live="polite"></div>
+<p class="small">The rules here are demo-only. They are simple fixed checks written for this page. They are not the rules of the real tool.</p>
+
+<h2>Limits</h2>
+<ul class="limits">
+<li>The samples are fictional and prepared in advance. No results on real profiles are shown or claimed.</li>
+<li>The text checks are simple fixed rules in your browser. This is not AI.</li>
+<li>No accuracy, speed or improvement figures are claimed.</li>
+<li>The real section names and rules are proprietary and are not shown here.</li>
+<li>Not formal model validation or independent assurance of an AI system.</li>
+</ul>
+<p>The full write-up is in the folder README: <a href="https://github.com/business-ai-practitioner/business-solutions-showcase/tree/main/409-linkedin-profile-health-check" rel="noopener">409-linkedin-profile-health-check</a></p>
+
+<div class="end">
+<p><strong>Enquiries:</strong> send me a message on LinkedIn. Say which offer interests you and what decision you are trying to make safer.</p>
+<p>Name: Ketul Shah. LinkedIn: <a href="https://www.linkedin.com/in/ketulhshah/" rel="noopener">https://www.linkedin.com/in/ketulhshah/</a></p>
+</div>
+</main>
+<script>
+(function(){
+var S={
+a:{text:"Headline: Operations Manager\n\nAbout:\nI run warehouse operations for a food distributor. In 2023 I led the move to scanned picking across 3 sites. I wrote the plan, trained 40 staff and reported weekly to the site directors. The move was completed on the planned date.",
+subject:"Persona A (fictional) | Operations manager profile",
+bottom:"Strong for the stated audience. One weak spot: the headline.",
+why:"Each role names a project, its scope and its outcome in the profile text. The headline says only a job title.",
+rate:[["Evidence","Strong"],["First impression","Mixed"],["Clarity","Strong"]],
+next:"Owner moves the strongest named outcome into the headline."},
+b:{text:"Headline: Passionate, results-driven sales leader | Team player\n\nAbout:\nI am a dynamic go-getter with a proven track record. I am passionate about winning and a true thought leader who brings synergy to every team.",
+subject:"Persona B (fictional) | Sales leader profile",
+bottom:"Little credit given. The claims are not supported by the text.",
+why:"The profile says \"results-driven\" and \"passionate\". It names no result, project or scope. Adjectives describe the writer, not the work.",
+rate:[["Evidence","Weak"],["First impression","Mixed"],["Clarity","Mixed"]],
+next:"Owner adds 1 named outcome per role, or removes the claim."},
+c:{text:"Headline: Analyst at a company\n\nAbout:\nNo summary given.\n\nExperience:\nAnalyst, 2024 to present.",
+subject:"Persona C (fictional) | Early-stage profile",
+bottom:"Not enough to score fairly.",
+why:"The profile gives a name, a job title and a company. Many sections have nothing to read, so the report says what is missing instead of guessing.",
+rate:[["Evidence","Not rated"],["First impression","Not rated"],["Clarity","Not rated"]],
+next:"Owner adds role detail, then the review is run again."}
+};
+var cur="a";
+function $(id){return document.getElementById(id);}
+function show(k){
+cur=k; var d=S[k];
+$("s-text").textContent=d.text; $("s-subject").textContent=d.subject; $("s-bottom").textContent=d.bottom;
+$("s-why").textContent=d.why; $("s-next").textContent=d.next;
+var tb=$("s-rate"); tb.textContent="";
+d.rate.forEach(function(r){var tr=document.createElement("tr");var a=document.createElement("th");a.scope="row";a.textContent=r[0];var b=document.createElement("td");b.textContent=r[1];tr.appendChild(a);tr.appendChild(b);tb.appendChild(tr);});
+var bs=document.querySelectorAll("button[data-s]");
+for(var i=0;i<bs.length;i++){bs[i].setAttribute("aria-pressed",bs[i].getAttribute("data-s")===k?"true":"false");}
+}
+var bs=document.querySelectorAll("button[data-s]");
+for(var i=0;i<bs.length;i++){bs[i].addEventListener("click",function(e){show(e.currentTarget.getAttribute("data-s"));});}
+$("load").addEventListener("click",function(){$("box").value=S[cur].text; $("out").textContent="";});
+$("clear").addEventListener("click",function(){$("box").value=""; $("out").textContent=""; $("box").focus();});
+var PH=["passionate","results-driven","dynamic","go-getter","proven track record","thought leader","synergy","team player","self-starter"];
+function run(){
+var t=$("box").value.replace(/\r/g,"");
+var out=$("out"); out.textContent="";
+var h=document.createElement("h3"); h.textContent="Text checks (demo-only rules)"; out.appendChild(h);
+var ul=document.createElement("ul"); out.appendChild(ul);
+function add(s){var li=document.createElement("li");li.textContent=s;ul.appendChild(li);}
+var words=t.trim()?t.trim().split(/\s+/).length:0;
+if(words===0){add("No text to check."); return;}
+add("Words: "+words+".");
+var sents=t.match(/[^.?\x21]+[.?\x21]*/g)||[];
+sents=sents.map(function(s){return s.replace(/\s+/g," ").trim();}).filter(function(s){return /[A-Za-z0-9]/.test(s);});
+var longest=0; var withNum=0; var flagged=[];
+sents.forEach(function(s){
+var n=s.split(/\s+/).length; if(n>longest){longest=n;}
+var hasNum=/[0-9]/.test(s); if(hasNum){withNum++;}
+var low=s.toLowerCase();
+PH.forEach(function(p){ if(low.indexOf(p)>-1 && hasNum===false && flagged.indexOf(p)===-1){flagged.push(p);} });
+});
+add("Sentences: "+sents.length+". Longest: "+longest+" words.");
+if(longest>30){add("1 or more sentences run over 30 words.");}
+add("Sentences that contain a figure: "+withNum+" of "+sents.length+".");
+if(flagged.length){add("Phrases with no figure in the same sentence: "+flagged.map(function(p){return "\""+p+"\"";}).join(", ")+" ("+flagged.length+").");}
+else{add("Phrases with no figure in the same sentence: none found in the demo list.");}
+if(words<40){add("The text is short ("+words+" words), so few checks can run.");}
+}
+$("run").addEventListener("click",run);
+show("a");
+})();
+</script>
+</body>
+</html>
